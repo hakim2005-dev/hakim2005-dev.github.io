@@ -6,306 +6,536 @@
   <title>IoTE KMITL – Faculty</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    .faculty-photo {
+      width: 80px; height: 80px;
+      border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      background: rgba(122,79,30,0.12);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .faculty-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .faculty-photo .ph-icon { font-size: 36px; line-height: 1; }
+  </style>
 </head>
 <body>
-
   <div id="navbar-placeholder"></div>
 
   <section class="page-hero">
     <div class="container">
       <p class="section-label">FACULTY</p>
       <h1 class="page-title">คณาจารย์</h1>
-      <p class="page-sub">ผู้เชี่ยวชาญด้าน IoT, Physics และ Information Engineering</p>
+      <p class="page-sub">IoT, Physics &amp; Information Engineering</p>
     </div>
     <div class="page-hero-line"></div>
   </section>
 
   <section class="faculty-section">
     <div class="container">
-
-      <!-- Filter Tabs -->
       <div class="faculty-tabs">
         <button class="tab-btn active" data-filter="all">ทั้งหมด</button>
         <button class="tab-btn" data-filter="iot">IoT &amp; Engineering</button>
         <button class="tab-btn" data-filter="physics">Physics</button>
-        <button class="tab-btn" data-filter="staff">Staff</button>
       </div>
 
       <div class="faculty-grid" id="faculty-grid">
 
-        <!-- IoT Engineering -->
-        <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
-          <div class="faculty-info">
-            <h4>ศ.ดร.ปิติเขต สู้รักษา</h4>
-            <p class="faculty-en">Prof.Dr.Pitikhate Sooraksa</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">IT Automation · Industrial Informatics</p>
-            <a href="mailto:pitikhate.so@kmitl.ac.th" class="faculty-email">pitikhate.so@kmitl.ac.th</a>
-          </div>
-        </div>
+        <!-- ======== IoT & Engineering ======== -->
 
         <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👩‍🏫</div>
-          <div class="faculty-info">
-            <h4>ผศ.นิจจารีย์ สัตยารักษ์</h4>
-            <p class="faculty-en">Asst.Prof.Nitjaree Satayarak</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Software Engineering · Distributed Testing</p>
-            <a href="mailto:nitjaree.sa@kmitl.ac.th" class="faculty-email">nitjaree.sa@kmitl.ac.th</a>
+          <div class="faculty-photo">
+            <img src="Image/pikulkaew.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
           </div>
-        </div>
-
-        <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
-          <div class="faculty-info">
-            <h4>ผศ.ไพศาล สิทธิโยภาสกุล</h4>
-            <p class="faculty-en">Asst.Prof.Paisan Sithiyopasakul</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Wireless Communication · Digital Filter</p>
-            <a href="mailto:paisan-si@kmitl.ac.th" class="faculty-email">paisan-si@kmitl.ac.th</a>
-          </div>
-        </div>
-
-        <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
-          <div class="faculty-info">
-            <h4>ผศ.ดร.อรรถพล ป้อมสถิตย์</h4>
-            <p class="faculty-en">Asst.Prof.Dr.Auttapon Pomsathit</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Cyber Security · Information Security</p>
-            <a href="mailto:auttapon.po@kmitl.ac.th" class="faculty-email">auttapon.po@kmitl.ac.th</a>
-          </div>
-        </div>
-
-        <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
-          <div class="faculty-info">
-            <h4>ผศ.ดร.นัชนัยน์ รุ่งเหมือนฟ้า</h4>
-            <p class="faculty-en">Asst.Prof.Dr.Natchanai Roongmuanpha</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Analog Filters · Oscillator Design · Chaotic Circuit</p>
-            <a href="mailto:natchanai.ro@kmitl.ac.th" class="faculty-email">natchanai.ro@kmitl.ac.th</a>
-          </div>
-        </div>
-
-        <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👩‍🏫</div>
           <div class="faculty-info">
             <h4>ผศ.ดร.พิกุลแก้ว ตังติสานนท์</h4>
             <p class="faculty-en">Asst.Prof.Dr.Pikulkaew Tangtisanon</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Web Application · Mobile Application · Information Security</p>
+            <p class="faculty-pos">หัวหน้าภาควิชา</p>
             <a href="mailto:pikulkaew.ta@kmitl.ac.th" class="faculty-email">pikulkaew.ta@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👩‍🏫</div>
+          <div class="faculty-photo">
+            <img src="Image/boonchana.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>ผศ.ดร.เกล็ดดาว สัตย์เจริญ</h4>
-            <p class="faculty-en">Asst.Prof.Dr.Kleddao Satcharoen</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Human Computer Interaction · User Interfaces</p>
-            <a href="mailto:kleddao.sa@kmitl.ac.th" class="faculty-email">kleddao.sa@kmitl.ac.th</a>
+            <h4>รศ.ดร.บุณย์ชนะ ภู่ระหงษ์</h4>
+            <p class="faculty-en">Assoc.Prof.Dr.Boonchana Purahong</p>
+            <p class="faculty-pos">ประธานหลักสูตรวิศวกรรมระบบไอโอทีและสารสนเทศ</p>
+            <a href="mailto:boonchana.pu@kmitl.ac.th" class="faculty-email">boonchana.pu@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👩‍🏫</div>
+          <div class="faculty-photo">
+            <img src="Image/apirat.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>ผศ.ดร.พนารัตน์ เชิญถนอมวงศ์</h4>
-            <p class="faculty-en">Asst.Prof.Dr.Panarat Cherntanomwong</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Telecommunication · Zigbee · Indoor Localization</p>
-            <a href="mailto:panarat.ch@kmitl.ac.th" class="faculty-email">panarat.ch@kmitl.ac.th</a>
+            <h4>ศ.ดร.อภิรัฐ ศิริธราธิวัตร</h4>
+            <p class="faculty-en">Prof.Dr.Apirat Siritaratiwat</p>
+            <p class="faculty-pos">รองหัวหน้าภาควิชา (ฝ่ายวิจัยและนวัตกรรม)</p>
+            <a href="mailto:" class="faculty-email"></a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👩‍🏫</div>
-          <div class="faculty-info">
-            <h4>ผศ.ดร.สุธีรา พันธ์ธีรานุรักษ์</h4>
-            <p class="faculty-en">Asst.Prof.Dr.Sutheera Puntheeranurak</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Data Mining · Big Data · OpenFlow Networks</p>
-            <a href="mailto:sutheera.pu@kmitl.ac.th" class="faculty-email">sutheera.pu@kmitl.ac.th</a>
+          <div class="faculty-photo">
+            <img src="Image/vanvisa.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
           </div>
-        </div>
-
-        <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
-          <div class="faculty-info">
-            <h4>ผศ.ดลชัย สุขเจริญผล</h4>
-            <p class="faculty-en">Asst.Prof.Dolchai Sookcharoenphol</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Digital Communications · Digital Signal Processing</p>
-            <a href="mailto:dolchai.so@kmitl.ac.th" class="faculty-email">dolchai.so@kmitl.ac.th</a>
-          </div>
-        </div>
-
-        <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👩‍🏫</div>
           <div class="faculty-info">
             <h4>ผศ.ดร.วันวิสา ชัชวงษ์</h4>
             <p class="faculty-en">Asst.Prof.Dr.Vanvisa Chutchavong</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Bernstein Filter · Pattern Recognition · Railway</p>
+            <p class="faculty-pos">รองหัวหน้าภาควิชา (ฝ่ายการเงิน)</p>
             <a href="mailto:vanvisa.ch@kmitl.ac.th" class="faculty-email">vanvisa.ch@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
+          <div class="faculty-photo">
+            <img src="Image/natchanai.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>ผศ.สรพงษ์ วชิรรัตนพรกุล</h4>
-            <p class="faculty-en">Asst.Prof.Sorapong Wachirarattanapornkul</p>
-            <p class="faculty-pos">อาจารย์ผู้รับผิดชอบหลักสูตร</p>
-            <p class="faculty-expert">Analog/Digital Filter · RFID · Embedded System</p>
-            <a href="mailto:sorapong.wa@kmitl.ac.th" class="faculty-email">sorapong.wa@kmitl.ac.th</a>
+            <h4>ผศ.ดร.นัชนัยน์ รุ่งเหมือนฟ้า</h4>
+            <p class="faculty-en">Asst.Prof.Dr.Natchanai Roongmuanpha</p>
+            <p class="faculty-pos">รองหัวหน้าภาควิชา (ฝ่ายต่างประเทศและกิจกรรมคณะ)</p>
+            <a href="mailto:natchanai.ro@kmitl.ac.th" class="faculty-email">natchanai.ro@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
+          <div class="faculty-photo">
+            <img src="Image/kleddao.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>รศ.ดร.อรรถสิทธิ์ หล่าสกุล</h4>
-            <p class="faculty-en">Assoc.Prof.Dr.Attasit Lasakul</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">Image Processing · Embedded Systems · Machine Vision</p>
-            <a href="mailto:attasit.la@kmitl.ac.th" class="faculty-email">attasit.la@kmitl.ac.th</a>
+            <h4>ผศ.ดร.เกล็ดดาว สัตย์เจริญ</h4>
+            <p class="faculty-en">Asst.Prof.Dr.Kleddao Satcharoen</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา (ผู้ช่วยฝ่ายต่างประเทศและกิจกรรมคณะ)</p>
+            <a href="mailto:kleddao.sa@kmitl.ac.th" class="faculty-email">kleddao.sa@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
+          <div class="faculty-photo">
+            <img src="Image/nitjaree.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.นิจจารีย์ สัตยารักษ์</h4>
+            <p class="faculty-en">Asst.Prof.Nitjaree Satayarak</p>
+            <p class="faculty-pos">รองหัวหน้าภาควิชา (ฝ่ายกิจการนักศึกษา)</p>
+            <a href="mailto:nitjaree.sa@kmitl.ac.th" class="faculty-email">nitjaree.sa@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="iot">
+          <div class="faculty-photo">
+            <img src="Image/thanavit.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
             <h4>ผศ.ดร.ธนวิชญ์ อนุวงศ์พินิจ</h4>
             <p class="faculty-en">Asst.Prof.Dr.Thanavit Anuwongpinit</p>
-            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
-            <p class="faculty-expert">IoT · Embedded Systems · Railway Signaling</p>
+            <p class="faculty-pos">รองหัวหน้าภาควิชา (ฝ่ายวิชาการ)</p>
             <a href="mailto:thanavit.an@kmitl.ac.th" class="faculty-email">thanavit.an@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="iot">
-          <div class="faculty-photo">👨‍🏫</div>
+          <div class="faculty-photo">
+            <img src="Image/suwilai.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>รศ.ดร.บุณย์ชนะ ภู่ระหงษ์</h4>
-            <p class="faculty-en">Assoc.Prof.Dr.Boonchana Purahong</p>
-            <p class="faculty-pos">ผู้ประสานงานสาขาวิศวกรรมสารสนเทศ</p>
-            <p class="faculty-expert">IoT · Robotics · Microcontroller · Smart System</p>
-            <a href="mailto:boonchana.pu@kmitl.ac.th" class="faculty-email">boonchana.pu@kmitl.ac.th</a>
+            <h4>ดร.สุวิไล พุ่มโพธิ์</h4>
+            <p class="faculty-en">Dr.Suwilai Phumpho</p>
+            <p class="faculty-pos">รองหัวหน้าภาควิชา (ฝ่ายกิจการภายนอก)</p>
+            <a href="mailto:suwilai.ph@kmitl.ac.th" class="faculty-email">suwilai.ph@kmitl.ac.th</a>
           </div>
         </div>
 
-        <!-- Physics Faculty -->
+        <div class="faculty-card reveal" data-cat="iot">
+          <div class="faculty-photo">
+            <img src="Image/auttapon.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.ดร.อรรถพล ป้อมสถิตย์</h4>
+            <p class="faculty-en">Asst.Prof.Dr.Auttapon Pomsathit</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา (ผู้ช่วยฝ่ายกิจการภายนอก)</p>
+            <a href="mailto:auttapon.po@kmitl.ac.th" class="faculty-email">auttapon.po@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="iot">
+          <div class="faculty-photo">
+            <img src="Image/panarat.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.ดร.พนารัตน์ เชิญถนอมวงศ์</h4>
+            <p class="faculty-en">Asst.Prof.Dr.Panarat Cherntanomwong</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา (ผู้ช่วยฝ่ายกิจการภายนอก)</p>
+            <a href="mailto:panarat.ch@kmitl.ac.th" class="faculty-email">panarat.ch@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="iot">
+          <div class="faculty-photo">
+            <img src="Image/sorapong.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.สรพงษ์ วชิรรัตนพรกุล</h4>
+            <p class="faculty-en">Asst.Prof.Sorapong Wachirarattanapornkul</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา (ผู้ช่วยฝ่ายกิจการนักศึกษา)</p>
+            <a href="mailto:sorapong.wa@kmitl.ac.th" class="faculty-email">sorapong.wa@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="iot">
+          <div class="faculty-photo">
+            <img src="Image/paisan.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.ไพศาล สิทธิโยภาสกุล</h4>
+            <p class="faculty-en">Asst.Prof.Paisan Sithiyopasakul</p>
+            <p class="faculty-pos">อาจารย์พิเศษ</p>
+            <a href="mailto:paisan-si@kmitl.ac.th" class="faculty-email">paisan-si@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="iot">
+          <div class="faculty-photo">
+            <img src="Image/attasit.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>รศ.ดร.อรรถสิทธิ์ หล่าสกุล</h4>
+            <p class="faculty-en">Assoc.Prof.Dr.Attasit Lasakul</p>
+            <p class="faculty-pos">อาจารย์พิเศษ</p>
+            <a href="mailto:attasit.la@kmitl.ac.th" class="faculty-email">attasit.la@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="iot">
+          <div class="faculty-photo">
+            <img src="Image/pitikhate.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ศ.ดร.ปิติเขต สู้รักษา</h4>
+            <p class="faculty-en">Prof.Dr.Pitikhate Sooraksa</p>
+            <p class="faculty-pos">อาจารย์ประจำหลักสูตร</p>
+            <a href="mailto:pitikhate.so@kmitl.ac.th" class="faculty-email">pitikhate.so@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        
+
+        <!-- ======== Physics ======== -->
+
         <div class="faculty-card reveal" data-cat="physics">
-          <div class="faculty-photo">👩‍🔬</div>
+          <div class="faculty-photo">
+            <img src="Image/pattareeya.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
             <h4>รศ.ดร.ภัทรียา ดำรงศักดิ์</h4>
             <p class="faculty-en">Assoc.Prof.Dr.Pattareeya Damrongsak</p>
-            <p class="faculty-pos">หัวหน้าภาควิชาฟิสิกส์</p>
-            <p class="faculty-expert">Optical Spectroscopy · Silicon Photovoltaics</p>
+            <p class="faculty-pos">หัวหน้าภาควิชาฟิสิกส์อุตสาหกรรม</p>
             <a href="mailto:pattareeya.da@kmitl.ac.th" class="faculty-email">pattareeya.da@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="physics">
-          <div class="faculty-photo">👩‍🔬</div>
+          <div class="faculty-photo">
+            <img src="Image/aparporn.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
             <h4>รศ.ดร.อาภาภรณ์ สกุลการะเวก</h4>
             <p class="faculty-en">Assoc.Prof.Dr.Aparporn Sakulkalavek</p>
             <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
-            <p class="faculty-expert">Thin Film · Thermoelectric Material · Material Science</p>
             <a href="mailto:aparporn.sa@kmitl.ac.th" class="faculty-email">aparporn.sa@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="physics">
-          <div class="faculty-photo">👨‍🔬</div>
+          <div class="faculty-photo">
+            <img src="Image/kitsakorn.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
             <h4>รศ.ดร.กฤษกร โล้เจริญรัตน์</h4>
             <p class="faculty-en">Assoc.Prof.Dr.Kitsakorn Locharoenrat</p>
             <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
-            <p class="faculty-expert">Cancer · Plasmonic · Nanoparticles</p>
             <a href="mailto:kitsakorn.lo@kmitl.ac.th" class="faculty-email">kitsakorn.lo@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="physics">
-          <div class="faculty-photo">👨‍🔬</div>
+          <div class="faculty-photo">
+            <img src="Image/chesta.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
             <h4>รศ.ดร.เชรษฐา รัตนพันธ์</h4>
             <p class="faculty-en">Assoc.Prof.Dr.Chesta Ruttanapun</p>
             <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
-            <p class="faculty-expert">Thermoelectric Materials · Synthesis · Characterization</p>
             <a href="mailto:chesta.ru@kmitl.ac.th" class="faculty-email">chesta.ru@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="physics">
-          <div class="faculty-photo">👨‍🔬</div>
+          <div class="faculty-photo">
+            <img src="Image/ratchanok.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
             <h4>รศ.ดร.รัชนก สมพรเสน่ห์</h4>
             <p class="faculty-en">Assoc.Prof.Dr.Ratchanok Somphonsane</p>
             <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
-            <p class="faculty-expert">Nanoelectronics · 2D Materials · Graphene</p>
             <a href="mailto:ratchanok.so@kmitl.ac.th" class="faculty-email">ratchanok.so@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="physics">
-          <div class="faculty-photo">👨‍🔬</div>
+          <div class="faculty-photo">
+            <img src="Image/sarai.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>รศ.ดร.สาหร่าย เล็กชะอุ่ม</h4>
+            <p class="faculty-en">Assoc.Prof.Dr.Sarai Lekchaaum</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:sarai.le@kmitl.ac.th" class="faculty-email">sarai.le@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/tipawan.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.ดร.ศ.ทิพวรรณ คล้ายบุญมี</h4>
+            <p class="faculty-en">Asst.Prof.Dr.S.Tipawan Khlayboonme</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:s.tipawan.kh@kmitl.ac.th" class="faculty-email">s.tipawan.kh@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/nathaporn.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.ดร.ณัฐพร พรหมรส</h4>
+            <p class="faculty-en">Asst.Prof.Dr.Nathaporn Promros</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:kpnathap@kmitl.ac.th" class="faculty-email">kpnathap@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/mettaya.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.ดร.เมตยา กิติวรรณ</h4>
+            <p class="faculty-en">Asst.Prof.Dr.Mettaya Kitiwan</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:mettaya.ki@kmitl.ac.th" class="faculty-email">mettaya.ki@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/pisan.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.ดร.พิศาล สุขวิสูตร</h4>
+            <p class="faculty-en">Asst.Prof.Dr.Pisan Sukwisute</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:pisan.su@kmitl.ac.th" class="faculty-email">pisan.su@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/bhanupol.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ผศ.ดร.ภาณุพล โขลนกระโทก</h4>
+            <p class="faculty-en">Asst.Prof.Dr.Bhanupol Klongratog</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:bhanupol.kl@kmitl.ac.th" class="faculty-email">bhanupol.kl@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/prathan.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
             <h4>ผศ.ดร.ประธาน บุรณศิริ</h4>
             <p class="faculty-en">Asst.Prof.Dr.Prathan Buranasiri</p>
             <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
-            <p class="faculty-expert">Digital Holography · Photonic Crystal · Metamaterial</p>
             <a href="mailto:prathan.bu@kmitl.ac.th" class="faculty-email">prathan.bu@kmitl.ac.th</a>
           </div>
         </div>
 
         <div class="faculty-card reveal" data-cat="physics">
-          <div class="faculty-photo">👨‍🔬</div>
+          <div class="faculty-photo">
+            <img src="Image/surasak.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>ผศ.ดร.เมตยา กิติวรรณ</h4>
-            <p class="faculty-en">Asst.Prof.Dr.Mettaya Kitiwan</p>
+            <h4>ผศ.สุรศักดิ์ พิพัฒน์ศาสตร์</h4>
+            <p class="faculty-en">Asst.Prof.Surasak Pipatsart</p>
             <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
-            <p class="faculty-expert">Nano-Coating · Advanced Ceramics · Microwave Processing</p>
-            <a href="mailto:mettaya.ki@kmitl.ac.th" class="faculty-email">mettaya.ki@kmitl.ac.th</a>
+            <a href="mailto:" class="faculty-email"></a>
           </div>
         </div>
 
-        <!-- Staff -->
-        <div class="faculty-card reveal" data-cat="staff">
-          <div class="faculty-photo">👩‍💼</div>
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/thanaporn.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>น.ส.เกศณี เกตุนวม</h4>
-            <p class="faculty-en">Miss Kesanee Ketnuam</p>
-            <p class="faculty-pos">เจ้าหน้าที่บริหารงานทั่วไป / เลขานุการ</p>
-            <p class="faculty-expert">ประสานงานภาควิชา</p>
-            <a href="mailto:kesanee.ke@kmitl.ac.th" class="faculty-email">kesanee.ke@kmitl.ac.th</a>
+            <h4>ผศ.ธนภรณ์ ลีลาวัฒนานนท์</h4>
+            <p class="faculty-en">Asst.Prof.Thanaporn Leelawattananon</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:tanaporn.le@kmitl.ac.th" class="faculty-email">tanaporn.le@kmitl.ac.th</a>
           </div>
         </div>
 
-        <div class="faculty-card reveal" data-cat="staff">
-          <div class="faculty-photo">👩‍🔬</div>
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/lunchakurn.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>นางพิมพร อ่อนละออ</h4>
-            <p class="faculty-en">Mrs.Pimporn Onlaor</p>
-            <p class="faculty-pos">นักวิทยาศาสตร์</p>
-            <a href="mailto:pimporn.be@kmitl.ac.th" class="faculty-email">pimporn.be@kmitl.ac.th</a>
+            <h4>ดร.ลัญจกร ตันนุกิจ</h4>
+            <p class="faculty-en">Dr.Lunchakurn Tannukij</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:Lunchakurn.ta@kmitl.ac.th" class="faculty-email">Lunchakurn.ta@kmitl.ac.th</a>
           </div>
         </div>
 
-        <div class="faculty-card reveal" data-cat="staff">
-          <div class="faculty-photo">👨‍🔬</div>
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/nuttakrit.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
           <div class="faculty-info">
-            <h4>นายชวนนท์ มะโน</h4>
-            <p class="faculty-en">Mr.Chawanon Mano</p>
-            <p class="faculty-pos">นักวิทยาศาสตร์</p>
-            <a href="mailto:chawanon.ma@kmitl.ac.th" class="faculty-email">chawanon.ma@kmitl.ac.th</a>
+            <h4>ดร.ณัฏกฤษ สมดอก</h4>
+            <p class="faculty-en">Dr.Nuttakrit Somdock</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:nuttakrit.so@kmitl.ac.th" class="faculty-email">nuttakrit.so@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/thammarat.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>อ.ธรรมรัตน์ แต่งตั้ง</h4>
+            <p class="faculty-en">Aj.Thammarat Taengtang</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:thammarat.ta@kmitl.ac.th" class="faculty-email">thammarat.ta@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/surachart.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>อ.สุรชาติ กมลดิลก</h4>
+            <p class="faculty-en">Aj.Surachart Kamoldilok</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:kamoldiloks@gmail.com" class="faculty-email">kamoldiloks@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/keerayoot.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ดร.กีรยุทธ์ ศรีนวลจันทร์</h4>
+            <p class="faculty-en">Dr.Keerayoot Srinuanjan</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:keerayoot.sr@kmitl.ac.th" class="faculty-email">keerayoot.sr@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/chinnapat.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ดร.ชินพรรธน์ รัตนศิรวิทย์</h4>
+            <p class="faculty-en">Dr.Chinnapat Ruttanasirawit</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:woraka.ne@kmitl.ac.th" class="faculty-email">woraka.ne@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/witoon.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ดร.วิฑูรย์ ยินดีสุข</h4>
+            <p class="faculty-en">Dr.Witoon Yindeesuk</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:witoon.yi@kmitl.ac.th" class="faculty-email">witoon.yi@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/pichanan.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ดร.พิชชานันท์ ธีเศรษฐ์โศภน</h4>
+            <p class="faculty-en">Dr.Pichanan Teesetsopon</p>
+            <p class="faculty-pos">อาจารย์ประจำภาควิชา</p>
+            <a href="mailto:pichanan.te@kmitl.ac.th" class="faculty-email">pichanan.te@kmitl.ac.th</a>
+          </div>
+        </div>
+
+        <div class="faculty-card reveal" data-cat="physics">
+          <div class="faculty-photo">
+            <img src="Image/pichet.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <span class="ph-icon" style="display:none">👤</span>
+          </div>
+          <div class="faculty-info">
+            <h4>ดร.เฉลิมพล รุจรดาวงศ์</h4>
+            <p class="faculty-en">Prof.Dr.Pichet Limsuwan</p>
+            <p class="faculty-pos">อาจารย์พิเศษ</p>
+            <a href="mailto:pichet.li@kmitl.ac.th" class="faculty-email">pichet.li@kmitl.ac.th</a>
           </div>
         </div>
 
@@ -315,5 +545,8 @@
 
   <div id="footer-placeholder"></div>
   <script src="script.js"></script>
+  <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="U-L7ZjFK9mlql8XCmceRf";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
 </body>
 </html>
