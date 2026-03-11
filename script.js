@@ -14,8 +14,11 @@ const NAVBAR_HTML = `
 <header id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="logo">
-      <span class="logo-iot">IoTE</span>
-      <span class="logo-sub">KMITL</span>
+      <img src="Image/logo.png" alt="IoTE KMITL" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <span class="logo-fallback" style="display:none; align-items:baseline; gap:6px;">
+        <span class="logo-iot">IoTE</span>
+        <span class="logo-sub">KMITL</span>
+      </span>
     </a>
     <button class="hamburger" id="hamburger" aria-label="เมนู">
       <span></span><span></span><span></span>
@@ -24,15 +27,7 @@ const NAVBAR_HTML = `
       <ul>
         <li><a href="index.html">หน้าแรก</a></li>
         <li><a href="about.html">ABOUT IoTE</a></li>
-        <li class="has-dropdown">
-          <a href="academics.html">ACADEMICS ▾</a>
-          <ul class="dropdown">
-            <li><a href="academics.html#bachelor">วศ.บ. วิศวกรรมระบบไอโอทีและสารสนเทศ</a></li>
-            <li><a href="academics.html#dual">Dual Degree (B.Eng. + B.Sc.)</a></li>
-            <li><a href="academics.html#continuing">วศ.บ. คอมพิวเตอร์และไอโอที (ต่อเนื่อง)</a></li>
-            <li><a href="academics.html#graduate">ปริญญาโท / เอก (AIoT)</a></li>
-          </ul>
-        </li>
+        <li><a href="academics.html">ACADEMICS</a></li>
         <li><a href="admission.html">ADMISSION</a></li>
         <li><a href="faculty.html">FACULTY</a></li>
         
@@ -72,7 +67,39 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navPlaceholder) navPlaceholder.outerHTML = NAVBAR_HTML;
   if (footerPlaceholder) footerPlaceholder.outerHTML = FOOTER_HTML;
 
-  // หลัง inject แล้วค่อย init ส่วนที่ต้องการ DOM
+  // Force close all dropdowns immediately after inject
+  document.querySelectorAll('.dropdown').forEach(d => { d.style.display = 'none'; });
+
+  // ONE single click handler for everything
+  document.addEventListener('click', (e) => {
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('main-nav');
+
+    // Hamburger
+    if (hamburger && hamburger.contains(e.target)) {
+      mainNav && mainNav.classList.toggle('open');
+      return;
+    }
+
+    // Dropdown trigger — คลิกที่ .has-dropdown แต่ไม่ใช่ item ข้างใน
+    const dropdownParent = e.target.closest('.has-dropdown');
+    if (dropdownParent && !e.target.closest('.dropdown')) {
+      e.preventDefault();
+      e.stopPropagation();
+      const dropdown = dropdownParent.querySelector('.dropdown');
+      const isOpen = dropdown && dropdown.style.display === 'flex';
+      // ปิดทุก dropdown ก่อน
+      document.querySelectorAll('.dropdown').forEach(d => { d.style.display = 'none'; });
+      // ถ้าปิดอยู่ → เปิด
+      if (!isOpen && dropdown) dropdown.style.display = 'flex';
+      return;
+    }
+
+    // คลิกนอก → ปิดทุก dropdown
+    document.querySelectorAll('.dropdown').forEach(d => { d.style.display = 'none'; });
+    if (mainNav && !mainNav.contains(e.target)) mainNav.classList.remove('open');
+  });
+
   initAll();
 });
 
@@ -110,48 +137,17 @@ function highlightActiveNav() {
 
 /* ── 5. HAMBURGER MENU ──────────────────────────────────────*/
 function initHamburger() {
-  const hamburger = document.getElementById('hamburger');
-  const mainNav = document.getElementById('main-nav');
-  if (!hamburger || !mainNav) return;
-
-  hamburger.addEventListener('click', () => {
-    mainNav.classList.toggle('open');
-  });
-
-  // ปิดเมื่อคลิกนอก nav
-  document.addEventListener('click', (e) => {
-    if (!mainNav.contains(e.target) && !hamburger.contains(e.target)) {
-      mainNav.classList.remove('open');
-    }
-  });
-
-  // ปิดเมื่อคลิก link
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => mainNav.classList.remove('open'));
-  });
+  // handled in main DOMContentLoaded click listener
 }
 
 /* ── 6. MOBILE DROPDOWN ─────────────────────────────────────*/
 function initMobileDropdown() {
-  document.querySelectorAll('.has-dropdown').forEach(item => {
-    item.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
-        e.stopPropagation();
-        item.classList.toggle('open');
-      }
-    });
-  });
+  // handled in main DOMContentLoaded click listener
 }
 
 /* ── 7. NAVBAR SCROLL EFFECT ────────────────────────────────*/
 function initNavbarScroll() {
-  const navbar = document.getElementById('navbar');
-  if (!navbar) return;
-  window.addEventListener('scroll', () => {
-    navbar.style.background = window.scrollY > 50
-      ? 'rgba(10, 14, 26, 0.98)'
-      : 'rgba(10, 14, 26, 0.92)';
-  });
+  // ไม่เปลี่ยนสี navbar ตอน scroll
 }
 
 /* ── 8. FACULTY FILTER TABS ─────────────────────────────────*/
